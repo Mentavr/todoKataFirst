@@ -1,10 +1,12 @@
 import { clsx } from 'clsx';
-import cls from './style.module.css';
 import { useEffect, useState } from 'react';
-import { useContextState } from '../../utils/hooks/useContextState';
 import { SubmitHandler, useForm } from 'react-hook-form';
+
+import { useContextState } from '../../utils/hooks/useContextState';
 import { IFormInput } from '../../types/types';
-import { formatDistance } from '../../utils/halpers/formatDistance';
+import { formatDistance } from '../../utils/helpers/formatDistance';
+
+import cls from './style.module.css';
 
 interface ITask {
   description: string;
@@ -29,7 +31,11 @@ export const Task = ({ description, created, id, type }: ITask) => {
   };
 
   const handlerTypeTask = () => {
-    statusTask === 'active' ? setStatusTask('complete') : setStatusTask('active');
+    if (statusTask === 'active') {
+      setStatusTask('complete');
+    } else {
+      setStatusTask('active');
+    }
   };
 
   const handlerDeleteTask = () => {
@@ -50,13 +56,13 @@ export const Task = ({ description, created, id, type }: ITask) => {
     <li className={cls.editing}>
       <div className={clsx(isEdit && cls.view)}>
         <input
-          id="task"
+          id={String(id)}
           onChange={handlerTypeTask}
           className={cls.toggle}
           type="checkbox"
           checked={statusTask === 'complete'}
         />
-        <label htmlFor="task">
+        <label htmlFor={String(id)}>
           <span className={clsx(cls.description, statusTask === 'complete' && cls.descriptionCheck)}>
             {description}
           </span>

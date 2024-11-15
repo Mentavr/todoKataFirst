@@ -1,5 +1,7 @@
 import clsx from 'clsx';
+
 import { useContextState } from '../../utils/hooks/useContextState';
+
 import cls from './style.module.css';
 
 export const Footer = () => {

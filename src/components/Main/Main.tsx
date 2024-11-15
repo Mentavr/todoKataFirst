@@ -1,6 +1,7 @@
-import cls from './style.module.css';
 import { Task } from '../Task/Task';
 import { useContextState } from '../../utils/hooks/useContextState';
+
+import cls from './style.module.css';
 
 export const Main = () => {
   const { getTasks } = useContextState();

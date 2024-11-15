@@ -1,7 +1,9 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
-import cls from './style.module.css';
+
 import { useContextState } from '../../utils/hooks/useContextState';
 import { IFormInput } from '../../types/types';
+
+import cls from './style.module.css';
 
 export const Header = () => {
   const { addTask } = useContextState();

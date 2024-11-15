@@ -1,6 +1,8 @@
 import { useState, type ReactNode } from 'react';
-import { StateContext } from './StateContext';
+
 import { IContextValue, ITask } from '../types/contextTypes';
+
+import { StateContext } from './StateContext';
 
 interface IStateContextProvider {
   children: ReactNode;
