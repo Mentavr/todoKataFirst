@@ -50,8 +50,6 @@ export const Task = ({ description, created, id, type }: ITask) => {
     setTypeTask(id, statusTask);
   }, [statusTask]);
 
-  console.log('formatDistance(created)', formatDistance(created));
-
   return (
     <li className={cls.editing}>
       <div className={clsx(isEdit && cls.view)}>
