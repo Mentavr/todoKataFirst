@@ -1,0 +1,49 @@
+.iconPause,
+.iconPlay {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.iconPlay {
+  font-size: 15px;
+}
+
+.iconPause:after {
+  content: '⏸';
+}
+
+.iconPlay:after {
+  content: '▶';
+}
+
+.buttonWrapper {
+  width: 100%;
+  max-width: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+}
+
+.icon {
+  width: 30px;
+  height: 40px;
+  font-size: 20px;
+  color: #cc9a9a;
+  margin: auto 0;
+  transition: color 0.2s ease-out;
+  cursor: pointer;
+}
+
+.icon-edit:after {
+  content: '✎';
+}

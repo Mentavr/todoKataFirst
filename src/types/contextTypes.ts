@@ -3,6 +3,8 @@ export interface ITask {
   type: 'active' | 'complete';
   description: string;
   created: Date;
+  minutes: number;
+  seconds: number;
 }
 
 export interface IContextValue {

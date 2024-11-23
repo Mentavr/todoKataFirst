@@ -14,20 +14,24 @@ export const StateContextProvider = ({ children }: IStateContextProvider) => {
   const [stateTasks, setStateTasks] = useState([] as ITask[]);
   const [stateStatusButton, setStateStatusButton] = useState<IStatusButton>(null);
 
+  // const getTasks = () => {
+  //   const filterTasksForStatus = stateTasks.filter((task) => {
+  //     if (stateStatusButton === null) {
+  //       return task;
+  //     }
+  //     if (task.type === stateStatusButton) {
+  //       return task;
+  //     }
+  //   });
+  //   return filterTasksForStatus;
+  // };
+
   const getTasks = () => {
-    const filterTasksForStatus = stateTasks.filter((task) => {
-      if (stateStatusButton === null) {
-        return task;
-      }
-      if (task.type === stateStatusButton) {
-        return task;
-      }
-    });
-    return filterTasksForStatus;
+    return stateTasks;
   };
 
-  const addTask = ({ id, description, type, created }: ITask) => {
-    setStateTasks([...stateTasks, { id, description, type, created }]);
+  const addTask = ({ id, description, type, created, minutes, seconds }: ITask) => {
+    setStateTasks([...stateTasks, { id, description, type, created, minutes, seconds }]);
   };
 
   const editTask = (id: number, newDescription: string) => {
