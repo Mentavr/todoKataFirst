@@ -72,6 +72,14 @@ export const Header = () => {
     e.target.value = value;
   };
 
+  const handlerInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value;
+    if (value[0] === ' ') {
+      value = value.trim();
+    }
+    e.target.value = value;
+  };
+
   return (
     <header className={cls.header}>
       <h1>todos</h1>
@@ -81,6 +89,7 @@ export const Header = () => {
           placeholder="What needs to be done?"
           autoFocus
           {...register('toDo', { required: true })}
+          onInput={handlerInput}
         />
 
         <input

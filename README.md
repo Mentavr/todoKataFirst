@@ -1,3 +1,3 @@
 # React + TypeScript + Vite
 
-## [Сайт](https://todo-kata-first-git-todo-timer-mentavrs-projects.vercel.app/)
+## [Сайт](https://timer-ltfpwy1z5-mentavrs-projects.vercel.app)
